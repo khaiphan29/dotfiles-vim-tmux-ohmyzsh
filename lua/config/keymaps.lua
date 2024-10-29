@@ -12,7 +12,7 @@ local keymap = vim.keymap -- for conciseness
 
 -- Map 0 to move to the first non-blank character of the line
 keymap.set('n', '0', '^', { noremap = true, silent = true })
--- keymap.set('n', '$', 'g_', { noremap = true, silent = true })
+keymap.set('n', '-', '$', { noremap = true, silent = true })
 
 
 --Neotree
@@ -33,8 +33,9 @@ keymap.set("n", "<leader>tn", ":tabn<CR>")     --  go to next tabvim.
 keymap.set("n", "<leader>tp", ":tabp<CR>")     --  go to previous tab
 keymap.set("n", "Z", ":tab split<CR>")         -- zoom in
 keymap.set("n", "zz", ":tabclose<CR>")         -- zoom out
--- buffer management
-keymap.set("n", "<leader>bw", ":bw<CR>")
+
+-- buffer management [https://stackoverflow.com/questions/4465095/how-to-delete-a-buffer-in-vim-without-losing-the-split-window]
+keymap.set("n", "<leader>bw", ":bp|bd #<CR>")
 
 -- Place debugger
 keymap.set("n", "<leader>dr", "odebugger<ESC>")
