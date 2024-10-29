@@ -4,6 +4,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       endwise = { enable = true },
+      indent = { enable = true, disable = { "yaml", "ruby" } },
       ensure_installed = {
         "bash",
         "html",
