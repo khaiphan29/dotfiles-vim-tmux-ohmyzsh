@@ -52,7 +52,10 @@ return {
         lualine_z = {'progress', 'location'}
       },
       inactive_sections = nil,
-      tabline = {},
+      tabline = {
+        lualine_a = {'buffers'}, -- Display open buffers
+        lualine_b = {'tabs'}, -- Display tab pages
+      },
       winbar = {},
       inactive_winbar = {},
       extensions = {}
