@@ -13,7 +13,7 @@ local keymap = vim.keymap -- for conciseness
 -- Map 0 to move to the first non-blank character of the line
 keymap.set('n', '0', '^', { noremap = true, silent = true })
 keymap.set('n', '-', '$', { noremap = true, silent = true })
-
+keymap.set('v', '-', '$', { noremap = true, silent = true })
 
 --Neotree
 keymap.set('n', '<C-t>', '<cmd>Neotree toggle<cr>')
@@ -35,7 +35,7 @@ keymap.set("n", "Z", ":tab split<CR>")         -- zoom in
 keymap.set("n", "zz", ":tabclose<CR>")         -- zoom out
 
 -- buffer management [https://stackoverflow.com/questions/4465095/how-to-delete-a-buffer-in-vim-without-losing-the-split-window]
-keymap.set("n", "<leader>bw", ":bp|bd #<CR>")
+keymap.set("n", "<leader>cb", ":bp|bd #<CR>")
 
 -- Place debugger
 keymap.set("n", "<leader>dr", "odebugger<ESC>")
@@ -49,7 +49,7 @@ keymap.set('n', '<space>f', function()
   vim.lsp.buf.format { async = true }
 end)
 -- Strip trailing white space
-keymap.set('n', '<leader>sw', ':s/\\s\\+$//<CR>', { noremap = true, silent = true })
+keymap.set('n', '<leader>ct', ':s/\\s\\+$//<CR>', { noremap = true, silent = true })
 
 -- Vim-spec
 keymap.set('n', '<Leader>t', ':TestFile<CR>', { noremap = true, silent = true })
