@@ -24,16 +24,18 @@ return {
       sections = {
         lualine_a = {'mode'},
         lualine_b = {'branch', 'diff', 'diagnostics'},
-        lualine_c = {{
-          -- function()
-          --   local filepath = vim.fn.expand('%:p')  -- Get the absolute path of the current file
-          --   local home = vim.fn.expand('~')        -- Get the home directory path
-          --   return filepath:gsub('^' .. home, '~') -- Replace home directory with '~'
-          -- end,
-          "filename",
-          path = 1,
-          icon = '',  -- Optional: file icon
-        }},
+        lualine_c = {
+          function()
+            -- local filepath = vim.fn.expand('%:p')  -- Get the absolute path of the current file
+            local cwd = vim.fn.getcwd() -- Get the current working directory
+            local home = vim.fn.expand('~') -- Get the home directory path
+            local path = cwd:gsub('^' .. home, '~') -- Replace home directory with '~'
+            return ' ' .. path -- Prepend folder icon
+          end,
+          -- "filename",
+          -- path = 1,
+          -- icon = '',  -- Optional: file icon
+        },
         lualine_x = {
           {
             require("noice").api.status.command.get,
@@ -53,11 +55,16 @@ return {
       },
       inactive_sections = nil,
       tabline = {
-        lualine_a = {'buffers'}, -- Display open buffers
-        lualine_b = {'tabs'}, -- Display tab pages
       },
-      winbar = {},
-      inactive_winbar = {},
+      winbar = {
+        lualine_a = {{
+          'filename',
+          path = 1,
+        }}, -- Show filename at the top of each window
+      },
+      inactive_winbar = {
+        lualine_a = {'filename'}, -- Show filename even for inactive windows
+      },
       extensions = {}
     })
   end,
