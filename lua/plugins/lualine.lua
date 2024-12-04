@@ -55,15 +55,26 @@ return {
       },
       inactive_sections = nil,
       tabline = {
+        lualine_a = {
+          { 'buffers', component_separators = { left = '', right = '' }, section_separators = { left = '', right = '' } },
+        },
+        lualine_b = {'tabs'}
       },
       winbar = {
-        lualine_a = {{
-          'filename',
-          path = 1,
-        }}, -- Show filename at the top of each window
+        lualine_a = {
+          {
+            'filename',
+            path = 1,
+          }
+        }, -- Show filename at the top of each window
       },
       inactive_winbar = {
-        lualine_a = {'filename'}, -- Show filename even for inactive windows
+        lualine_a = {
+          {
+            'filename',
+            path = 1,
+          }
+        }, -- Show filename at the top of each window
       },
       extensions = {}
     })
