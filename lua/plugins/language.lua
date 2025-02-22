@@ -2,6 +2,7 @@ return {
   -- add more treesitter parsers
   {
     "nvim-treesitter/nvim-treesitter",
+    dependencies = { "RRethy/nvim-treesitter-endwise" },
     opts = {
       endwise = { enable = true },
       indent = { enable = true, disable = { "yaml", "ruby" } },
@@ -16,6 +17,7 @@ return {
         "python",
         "query",
         "regex",
+        "ruby",
         "tsx",
         "typescript",
         "vim",
@@ -41,16 +43,9 @@ return {
   -- use mini.starter instead of alpha
   { import = "lazyvim.plugins.extras.ui.mini-starter" },
 
-  -- add jsonls and schemastore packages, and setup treesitter for json, json5 and jsonc
-  { import = "lazyvim.plugins.extras.lang.json" },
-
   -- General
   -- Use for quickly test on multiple language [https://github.com/vim-test/vim-test]
   { 'vim-test/vim-test' },
-
-  -- for typescript, LazyVim also includes extra specs to properly setup lspconfig,
-  -- treesitter, mason and typescript.nvim. So instead of the above, you can use:
-  { import = "lazyvim.plugins.extras.lang.typescript" },
 
   -- Rails plugins
   { 'tpope/vim-rails' },

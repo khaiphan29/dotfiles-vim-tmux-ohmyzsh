@@ -56,7 +56,7 @@ return {
       inactive_sections = nil,
       tabline = {
         lualine_a = {
-          { 'buffers', component_separators = { left = '', right = '' }, section_separators = { left = '', right = '' } },
+          { 'buffers', component_separators = { left = '|', right = '|' }, section_separators = { left = '', right = '' } },
         },
         lualine_b = {'tabs'}
       },

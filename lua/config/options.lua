@@ -9,8 +9,8 @@ opt.relativenumber = true
 opt.number = true
 
 -- tabs & indentation
-opt.tabstop = 2
-opt.shiftwidth = 2
+opt.tabstop = 3
+opt.shiftwidth = 3
 opt.expandtab = true
 opt.autoindent = true
 
@@ -43,7 +43,7 @@ opt.splitright = true
 opt.splitbelow = true
 
 -- Autosave
-vim.g.auto_save = 1
+vim.g.auto_save = 2
 
 -- Others
 opt.hidden = true
@@ -51,3 +51,8 @@ opt.iskeyword:append("-")
 vim.o.mouse = ""
 vim.g.autoformat = false
 vim.g["test#strategy"] = "dispatch" -- For Vimspec- Add any additional options here
+
+-- Language
+-- Ruby
+-- vim.g.lazyvim_ruby_lsp = "solargraph"
+-- vim.g.lazyvim_ruby_formatter = "rubocop"
