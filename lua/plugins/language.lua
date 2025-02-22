@@ -40,9 +40,6 @@ return {
     end,
   },
 
-  -- use mini.starter instead of alpha
-  { import = "lazyvim.plugins.extras.ui.mini-starter" },
-
   -- General
   -- Use for quickly test on multiple language [https://github.com/vim-test/vim-test]
   { 'vim-test/vim-test' },
