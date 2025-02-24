@@ -22,18 +22,18 @@ return {
       servers = {
         -- pyright will be automatically installed with mason and loaded with lspconfig
         pyright = {},
-        --
-        -- solargraph = {
-        --   enabled = lsp == "solargraph",
-        -- },
-        --
-        -- rubocop = {
-        --   -- If Solargraph and Rubocop are both enabled as an LSP,
-        --   -- diagnostics will be duplicated because Solargraph
-        --   -- already calls Rubocop if it is installed
-        --   enabled = formatter == "rubocop" and lsp ~= "solargraph",
-        -- },
-        --
+         --
+         -- solargraph = {
+         --   enabled = vim.g.lsp == "solargraph",
+         -- },
+         --
+         -- rubocop = {
+         --   -- If Solargraph and Rubocop are both enabled as an LSP,
+         --   -- diagnostics will be duplicated because Solargraph
+         --   -- already calls Rubocop if it is installed
+         --   enabled = vim.g.formatter == "rubocop" and vim.g.lsp ~= "solargraph",
+         -- },
+         --
       },
     },
   },
