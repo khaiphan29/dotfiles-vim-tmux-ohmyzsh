@@ -23,7 +23,7 @@ return {
          table.insert(opts.sources, { name = "emoji" })
       end,
    },
-   --end
+   -- end
 
 
    -- auto-save
