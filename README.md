@@ -11,3 +11,10 @@ The line installed_version: 8 is removed from lazy-lock.json compared to the cur
 ## LSP Problems
 ### Code suggestion error
 Check lsp.lua
+
+# LSP
+## Ruby (Solargraph)
++ Have not find out a way to bypass double warning when using Rubocop with Solargraph (Not Important)
+### Solargraph
+For scripting Ruby Project, use *bundle init* for Solargraph to detect the root of project
++ Use .solargraph.yaml to config the Solargraph (e.g. exclude and include files)
