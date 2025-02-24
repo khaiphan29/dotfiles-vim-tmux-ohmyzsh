@@ -4,6 +4,9 @@
 -- Add any additional options here
 local opt = vim.opt -- for conciseness
 
+-- bypass the warn to import lazyconfig first
+vim.g. lazyvim_check_order = false
+
 -- line numbers
 opt.relativenumber = true
 opt.number = true
