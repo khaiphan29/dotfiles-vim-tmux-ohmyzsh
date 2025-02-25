@@ -107,3 +107,15 @@ vim.api.nvim_set_keymap('v', '<Up>', '<NOP>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<Down>', '<NOP>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<Left>', '<NOP>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<Right>', '<NOP>', { noremap = true, silent = true })
+
+
+-- run file in split terminal
+vim.keymap.set("n", "<leader>rf", function()
+  local extension = vim.fn.expand("%:e")
+  if extension == "rb" then
+    -- Open a horizontal split and run the Ruby file in a terminal
+    vim.cmd("split | terminal ruby " .. vim.fn.expand("%"))
+  else
+    print("." .. extension .. "is not a supported file!")
+  end
+end, { desc = "Run language-supported file in horizontal terminal split" })
