@@ -54,10 +54,10 @@ end)
 keymap.set('n', '<leader>ws', ':s/\\s\\+$//<CR>', { noremap = true, silent = true })
 
 -- Vim-spec
-keymap.set('n', '<Leader>t', ':TestFile<CR>', { noremap = true, silent = true })
-keymap.set('n', '<Leader>s', ':TestNearest<CR>', { noremap = true, silent = true })
-keymap.set('n', '<Leader>l', ':TestLast<CR>', { noremap = true, silent = true })
-keymap.set('n', '<Leader>a', ':TestSuite<CR>', { noremap = true, silent = true })
+keymap.set('n', '<Leader>tf', ':TestFile<CR>', { noremap = true, silent = true })
+keymap.set('n', '<Leader>tn', ':TestNearest<CR>', { noremap = true, silent = true })
+keymap.set('n', '<Leader>tl', ':TestLast<CR>', { noremap = true, silent = true })
+keymap.set('n', '<Leader>ts', ':TestSuite<CR>', { noremap = true, silent = true })
 
 -- Vim rails
 keymap.set("n", "<leader>vc", ":Vcontroller<CR>")
@@ -114,7 +114,8 @@ vim.keymap.set("n", "<leader>rf", function()
   local extension = vim.fn.expand("%:e")
   if extension == "rb" then
     -- Open a horizontal split and run the Ruby file in a terminal
-    vim.cmd("split | terminal ruby " .. vim.fn.expand("%"))
+    vim.cmd("Dispatch bundle exec ruby " .. vim.fn.expand("%"))
+
   else
     print("." .. extension .. "is not a supported file!")
   end

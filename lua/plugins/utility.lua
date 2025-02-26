@@ -70,6 +70,6 @@ return {
    { 'tpope/vim-surround' },
 
    -- learn to use!
-   { 'tpope/vim-dispatch',             enabled = false },
+   { 'tpope/vim-dispatch', },
 
 }

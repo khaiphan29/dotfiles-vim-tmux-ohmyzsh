@@ -5,7 +5,10 @@
 local opt = vim.opt -- for conciseness
 
 -- bypass the warn to import lazyconfig first
-vim.g. lazyvim_check_order = false
+vim.g.lazyvim_check_order = false
+
+-- test
+vim.g['test#strategy'] = 'dispatch' -- For vim-test
 
 -- line numbers
 opt.relativenumber = true
