@@ -74,10 +74,19 @@ keymap.set("n", "<leader>f3", ":set foldmethod=syntax<CR>:set foldlevel=3<CR> ")
 keymap.set("n", "<leader>f0", ":set foldlevel=99<CR> ")
 
 -- Copilot
-vim.api.nvim_set_keymap("i", "<C-j>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
-vim.api.nvim_set_keymap("i", "<C-i>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
-keymap.set("i", "<C-h>", 'copilot#Previous()', { silent = true, expr = true })
-keymap.set("i", "<C-l>", 'copilot#Next()', { silent = true, expr = true })
+-- vim.api.nvim_set_keymap("i", "<C-j>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+-- vim.api.nvim_set_keymap("i", "<C-i>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+keymap.set("i", "<C-k>", '<Plug>(copilot-previous)', { silent = true, expr = true })
+keymap.set("i", "<C-j>", '<Plug>(copilot-next)', { silent = true, expr = true })
+keymap.set("i", "<C-l>", '<Plug>(copilot-accept-word)', { silent = true })
+keymap.set("i", "<C-M-l>", '<Plug>(copilot-accept-line)', { silent = true })
+keymap.set("i", "<C-h>", '<Plug>(copilot-dismiss)', { silent = true })
+keymap.set("i", "<C-g>", '<Plug>(copilot-suggest)', { silent = true })
+
+
+-- Tab literal
+-- keymap.set("i", "S-<Tab>", "<C-v><Tab>", { noremap = true, silent = true })
+
 
 -- Dispatch kill rspec port
 -- Function to run the kill command using Dispatch
@@ -109,7 +118,7 @@ vim.api.nvim_set_keymap('v', '<Left>', '<NOP>', { noremap = true, silent = true 
 vim.api.nvim_set_keymap('v', '<Right>', '<NOP>', { noremap = true, silent = true })
 
 
--- run file in split terminal
+-- run file using Dispatch
 vim.keymap.set("n", "<leader>rf", function()
   local extension = vim.fn.expand("%:e")
   if extension == "rb" then
@@ -119,4 +128,4 @@ vim.keymap.set("n", "<leader>rf", function()
   else
     print("." .. extension .. "is not a supported file!")
   end
-end, { desc = "Run language-supported file in horizontal terminal split" })
+end, { desc = "Run language-supported file" })
