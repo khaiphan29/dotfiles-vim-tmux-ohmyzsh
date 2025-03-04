@@ -76,12 +76,12 @@ keymap.set("n", "<leader>f0", ":set foldlevel=99<CR> ")
 -- Copilot
 -- vim.api.nvim_set_keymap("i", "<C-j>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
 -- vim.api.nvim_set_keymap("i", "<C-i>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
-keymap.set("i", "<C-k>", '<Plug>(copilot-previous)', { silent = true, expr = true })
-keymap.set("i", "<C-j>", '<Plug>(copilot-next)', { silent = true, expr = true })
-keymap.set("i", "<C-l>", '<Plug>(copilot-accept-word)', { silent = true })
-keymap.set("i", "<C-M-l>", '<Plug>(copilot-accept-line)', { silent = true })
-keymap.set("i", "<C-h>", '<Plug>(copilot-dismiss)', { silent = true })
-keymap.set("i", "<C-g>", '<Plug>(copilot-suggest)', { silent = true })
+keymap.set("i", "<C-l>", '<Plug>(copilot-previous)', { silent = true })
+keymap.set("i", "<C-h>", '<Plug>(copilot-next)', { silent = true })
+keymap.set("i", "<S-Tab>", '<Plug>(copilot-accept-word)', { noremap = true, silent = true })
+-- keymap.set("i", "<C-M-l>", '<Plug>(copilot-accept-line)', { silent = true })
+keymap.set("i", "<C-Left>", '<Plug>(copilot-dismiss)', { silent = true })
+keymap.set("i", "<C-Right>", '<Plug>(copilot-suggest)', { silent = true })
 
 
 -- Tab literal
