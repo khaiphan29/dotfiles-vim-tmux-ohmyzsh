@@ -10,6 +10,9 @@ vim.g.lazyvim_check_order = false
 -- test
 vim.g['test#strategy'] = 'dispatch' -- For vim-test
 
+-- vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = "#000000", nocombine = true })
+-- vim.api.nvim_set_hl(0, "IndentBlanklineContextChar", { fg = "#666666", nocombine = true })
+
 -- line numbers
 opt.relativenumber = true
 opt.number = true
@@ -57,8 +60,3 @@ opt.iskeyword:append("-")
 vim.o.mouse = ""
 vim.g.autoformat = false
 vim.g["test#strategy"] = "dispatch" -- For Vimspec- Add any additional options here
-
--- Language
--- Ruby
--- vim.g.lazyvim_ruby_lsp = "solargraph"
--- vim.g.lazyvim_ruby_formatter = "rubocop"
